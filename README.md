@@ -1,3 +1,8 @@
+# Scalable Chat App📬
+
+This is a highly scalable chat application designed to scale effortlessly across multiple servers. By leveraging Redis' Pub/Sub mechanism, the app ensures that messages are distributed in real-time to all subscribed servers. This architecture allows for horizontal scaling🚀, making the application highly efficient and capable of handling large volumes of users and traffic.
+
+
 # Turborepo starter
 
 This is an official starter Turborepo.
