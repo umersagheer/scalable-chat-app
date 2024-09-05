@@ -1,15 +1,7 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-});
+import "./globals.css";
+import { SocketProvider } from "../context/socket-provider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,9 +15,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
-      </body>
+      <SocketProvider>
+        <body className="bg-neutral-900 text-neutral-100">
+          <main className="max-w-2xl mx-auto dark">{children}</main>
+        </body>
+      </SocketProvider>
     </html>
   );
 }
